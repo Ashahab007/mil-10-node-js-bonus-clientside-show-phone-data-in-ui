@@ -15,7 +15,7 @@ const router = createBrowserRouter([
       {
         path: "/phones",
         Component: Phones,
-        // 3.0 Now after 2.6 from my-phone-server folder, fetching the data from browser url address but it will show error. কারণ একটা port থেকে আরেকটা port এর data fetch করার সময় block করে দেয়  security reason এর জন্য। তাই CORS install করতে হবে। so go to express js website Resources => middlewear => cors "npm i cors" in backend server which was running in terminal "my-phone-server". After install run in that server "nodemon .index.js". Now need to setup the cors so go to "my-phone-server" for rest of the steps. here using loader we fetch the data from backend
+        // 3.0 Now after 2.6 from my-phone-server folder, fetching the data from browser url address but it will show error. কারণ একটা port থেকে আরেকটা port এর data fetch করার সময় block করে দেয়  security reason এর জন্য। তাই CORS install করতে হবে। so go to express js website Resources => middlewear => cors "npm i cors" in backend server which was running in terminal "my-phone-server". After install run in that server "nodemon .index.js". Now need to setup the cors so go to "my-phone-server" for rest of the steps. here using loader we fetch the data from backend.
         loader: () => fetch("http://localhost:5000/phones"),
       },
 
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         path: "/phone/:id", // this path is created on the basis of Phones component's Link, created this dynamic path.
         Component: Phone,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/phones/${params.id}`), //fetching  each phone from the backend server by id
+          fetch(`http://localhost:5000/phones/${params.id}`), //fetching  each phone from the backend server by id.
       },
     ],
   },
